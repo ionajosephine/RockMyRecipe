@@ -17,8 +17,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to @recipe
+      flash[:notice] = "Recipe created successfully"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -28,9 +29,10 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
+      flash[:notice] = "Recipe updated successfully"
       redirect_to @recipe
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
