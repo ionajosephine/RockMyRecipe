@@ -3,4 +3,5 @@ class Contributor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :profile_name, presence: true, uniqueness: true
 end
