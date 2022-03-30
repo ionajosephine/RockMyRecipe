@@ -11,9 +11,8 @@ RSpec.describe Recipe, type: :model do
     it "should have an error on title" do
       recipe = Recipe.new
       recipe.valid?
-      puts recipe.errors.inspect
+     # puts recipe.errors.inspect
       expect(recipe.errors.of_kind?(:title, :blank)).to eq(true)
-      expect { FactoryBot.create(:recipe) }.to_not raise_exception
     end
   end
 end
