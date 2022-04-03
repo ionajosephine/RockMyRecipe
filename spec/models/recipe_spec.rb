@@ -17,3 +17,29 @@ RSpec.describe Recipe, type: :model do
   end
 end
 
+RSpec.describe Recipe, type: :model do
+  context "with no contributor" do
+    it "should have an error on contributor" do
+      recipe = Recipe.new
+      recipe.valid?
+     # puts recipe.errors.inspect
+      expect(recipe.errors.of_kind?(:contributor, :blank)).to eq(true)
+    end
+  end
+end
+
+RSpec.describe Recipe, type: :model do
+  context "with title that's already taken" do
+
+    let(:other_recipe) { FactoryBot.create(:recipe) }
+
+    it "should have a uniqueness error on title" do
+
+      recipe = Recipe.new(title: other_recipe.title)
+      recipe.valid?
+      puts recipe.errors.inspect
+      expect(recipe.errors.of_kind?(:title, :taken)).to eq(true)
+    end
+  end
+end
+

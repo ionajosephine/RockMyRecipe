@@ -4,4 +4,5 @@ class Contributor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :profile_name, presence: true, uniqueness: true
+  has_many :recipes, :dependent => :destroy
 end
