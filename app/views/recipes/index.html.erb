@@ -1,14 +1,11 @@
 <div class="flex space-y-4 p-10">
-    <span class="text-center text-teal-300 font-semibold text-2xl"> <h1>Welcome to the Recipes Index</h1></span>
+    <span class="text-right text-emerald-900 font-semibold text-xl"> <h1>Welcome to the Recipes Index</h1></span>
 </div>
 
 <ul>
   <% @recipes.each do |recipe| %>
-   <li class="text-black hover:text-cyan-500"> <%= link_to recipe.title, recipe %> </li>
+   <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to recipe.title, recipe %> </li>
    <br>
   <% end %>
 </ul>
 
-<button class="text-sm text-black items-center px-3.5 py-1.5 rounded-full bg-fuchsia-200 hover:bg-cyan-200"> 
-  <%= link_to "Create a new recipe", new_recipe_path %>
-</button>
