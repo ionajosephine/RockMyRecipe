@@ -4,9 +4,7 @@ RSpec.describe Recipe, type: :model do
   it "creates a record successfully" do
     expect { FactoryBot.create(:recipe) }.to_not raise_exception
   end
-end
 
-RSpec.describe Recipe, type: :model do
   context "with no title" do
     it "should have an error on title" do
       recipe = Recipe.new
@@ -15,9 +13,7 @@ RSpec.describe Recipe, type: :model do
       expect(recipe.errors.of_kind?(:title, :blank)).to eq(true)
     end
   end
-end
 
-RSpec.describe Recipe, type: :model do
   context "with no contributor" do
     it "should have an error on contributor" do
       recipe = Recipe.new
@@ -26,9 +22,7 @@ RSpec.describe Recipe, type: :model do
       expect(recipe.errors.of_kind?(:contributor, :blank)).to eq(true)
     end
   end
-end
 
-RSpec.describe Recipe, type: :model do
   context "with title that's already taken" do
 
     let(:other_recipe) { FactoryBot.create(:recipe) }
