@@ -1,9 +1,9 @@
 <%= form_with model: @recipe do |form| %>
   <div>
-    <%= form.label :title %>
+    <%= form.label :title, class:"text-emerald-900" %>
   </div>
   <div>
-    <%= form.text_field :title, autofocus: true, placeholder: :title, class:"w-full rounded-lg caret-pink-500 text-m font-semibold" %>
+    <%= form.text_field :title, autofocus: true, placeholder: :title, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
   <div>
     <% recipe.errors.full_messages_for(:title).each do |message| %>

@@ -3,14 +3,14 @@
     <ul class="list-none flex space-x-6 w-full text-lg text-right">
       <li class="text-right space-y-6 underline decoration-1 decoration-indigo-500 font-bold text-white hover:text-green-500"><%= link_to 'Recipes', recipes_path %></li>
       <% if contributor_signed_in? %>
-          <li class="text-right text-emerald-900 hover:text-emerald-600"><%= link_to 'New Recipe', new_recipe_path %></li>
-          <li class="text-right italic text-black hover:text-emerald-600"><%= link_to current_contributor.profile_name, edit_contributor_registration_path %></li>
-          <li class="text-right text-black hover:text-emerald-600"><%= button_to "Sign Out", destroy_contributor_session_path, method: :delete %></li>
+          <li class="text-right text-white hover:text-emerald-600"><%= link_to 'New Recipe', new_recipe_path %></li>
+          <li class="text-right italic text-white hover:text-emerald-600"><%= link_to current_contributor.profile_name, edit_contributor_registration_path %></li>
+          <li class="text-right text-white hover:text-emerald-600"><%= button_to "Sign Out", destroy_contributor_session_path, method: :delete %></li>
       <% else %>
-        <li class="text-right text-black hover:text-emerald-600">
+        <li class="text-right text-white hover:text-emerald-300">
           <%= link_to "Sign In", new_contributor_session_path %>
         </li>
-        <li class="text-right text-black hover:text-emerald-600">
+        <li class="text-right text-white hover:text-emerald-300">
           <%= link_to "Sign Up", new_contributor_registration_path %>
         </li>
       <% end %>

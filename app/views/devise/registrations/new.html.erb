@@ -1,29 +1,45 @@
-<h2>Sign up</h2>
+<div class="pb-5"></div>
+
+<h1 class="text-center text-emerald-900 font-semibold text-2xl"> Please sign up </h1>
+
+<div class="pb-5"></div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, class:"text-emerald-900" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
+
+  <div class="pb-5"></div>
+
+  <div class="field">
+    <%= f.label :profile_name, class:"text-emerald-900"%><i>(This will be public)</i><br />
+    <%= f.text_field :profile_name, autocomplete: "Profile Name", class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div>
+
+  <div class="pb-5"></div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
+  
+  <div class="pb-5"></div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
-    <div class="pb-5"></div>
+  
+  <div class="pb-5"></div>
 
   <div class="actions">
-    <%= f.submit class:"width-64 text-sm text-white items-center px-3.5 py-2.5 rounded-full bg-emerald-700 hover:bg-emerald-600"  %>
+    <%= f.submit "Sign me up!", class:"width-64 text-sm text-white items-center px-3.5 py-2.5 rounded-full bg-emerald-700 hover:bg-emerald-600"  %>
   </div>
 <% end %>
 
