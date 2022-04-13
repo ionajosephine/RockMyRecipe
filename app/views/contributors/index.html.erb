@@ -1,0 +1,12 @@
+
+<div class="flex space-y-4 p-10">
+    <span class="text-right text-emerald-900 font-semibold text-xl"> <h2>Thanks to our contributors:</h2></span>
+</div>
+
+<ul>
+  <% @contributors.each do |c| %>
+   <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to c.profile_name, contributor_path(c) %> </li>
+   <br>
+  <% end %>
+</ul>
+

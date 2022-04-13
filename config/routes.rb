@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :contributors
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root "recipes#index"
+  devise_for :contributors, :controllers => { registrations: 'contributors/registrations' }
+  #get '/contributors', to: '/contributors#index'
 
+  resources :contributors, only: [:index, :show]
   resources :recipes
-
 end
