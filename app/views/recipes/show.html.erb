@@ -4,3 +4,6 @@
     <h1><%= @recipe.title %></h1>
   </span>
 </div>
+<% if @recipe.contributor == current_contributor %>
+  <button class="btn-primary w-36"> <%= link_to "Edit", edit_recipe_path(@recipe) %> </button>
+<% end %>
