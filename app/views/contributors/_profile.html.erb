@@ -1,5 +1,14 @@
+<div class="pb-5"></div>
 
-<%# stats to go here>
+<h2 class="text-centre text-emerald-900 font-semibold text-lg">Contributions:<h3>
 
+<div class="pb-5"></div>
+
+<ul>
+  <% contributor.recipes.each do |recipe| %>
+    <li class="text-lg text-emerald-900 hover:text-green-500"><%= link_to recipe.title, recipe %></li>
+    <br>
+  <% end %>
+</ul>
 
 
