@@ -1,7 +1,7 @@
 <div class="pb-5"></div>
 
 <% if @contributor == current_contributor %>
-    <h1 class="text-centre text-emerald-900 font-semibold text-xl"> Welcome to YOUR public profile <%= current_contributor.profile_name %>! <h1>
+    <h1 class="text-centre text-emerald-900 font-semibold text-xl"> Welcome to YOUR public profile, <%= current_contributor.profile_name %>! <h1>
      <%= render "profile", contributor: current_contributor %>
 <% else %>
     <h1 class="text-centre text-emerald-900 font-semibold text-xl"> Welcome to the public profile for <%= @contributor.profile_name %>: </h1>

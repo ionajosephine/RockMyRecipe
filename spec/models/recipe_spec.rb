@@ -14,6 +14,15 @@ RSpec.describe Recipe, type: :model do
     end
   end
 
+  context "with no description" do
+    it "should have an error on description" do
+      recipe = Recipe.new
+      recipe.valid?
+     # puts recipe.errors.inspect
+      expect(recipe.errors.of_kind?(:description, :blank)).to eq(true)
+    end
+  end
+
   context "with no contributor" do
     it "should have an error on contributor" do
       recipe = Recipe.new

@@ -1,9 +1,17 @@
 
-<div class="flex p-10">
+<div class="flex p-10 flex-col">
   <span class="text-center text-emerald-900 font-semibold text-2xl">
     <h1><%= @recipe.title %></h1>
   </span>
+  <div class="pb-5"></div>
+  <div>
+    <p class="text-emerald-900 text-m"><q><%= @recipe.description %></q>
+    <br><br>
+    <i class="text-m text-emerald-900 hover:text-green-500 underline">by <%= link_to @recipe.contributor.profile_name, @recipe.contributor %></i>
+  </div>
 </div>
 <% if @recipe.contributor == current_contributor %>
+  <h3 class="text-emerald-900"><i>You contributed this recipe! Thanks for getting involved, </i><i><%= current_contributor.profile_name %>!</i></h3>
+  <div class="pb-5"></div>
   <button class="btn-primary w-36"> <%= link_to "Edit", edit_recipe_path(@recipe) %> </button>
 <% end %>
