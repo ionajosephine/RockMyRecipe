@@ -1,26 +1,7 @@
 # README
 
-This is a recipe sharing app built in Ruby on Rails.
+This is a recipe sharing app built in Ruby on Rails. 
+When the MVP (according to my aims) is finished I'll update this file with more info including
+instructions for how to use it, ruby version, system dependencies, configuration, etc. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
