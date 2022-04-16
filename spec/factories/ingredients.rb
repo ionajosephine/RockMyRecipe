@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :ingredient do
-    name { "MyString" }
+    sequence(:name) { |number| "Ingredient #{number}" }
   end
 end
