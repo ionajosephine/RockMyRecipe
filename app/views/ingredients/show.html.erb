@@ -1,0 +1,21 @@
+
+<div class="flex p-10 flex-col">
+  <span class="text-center text-emerald-900 font-semibold text-2xl">
+    <h1><%= @ingredient.name %></h1>
+  </span>
+  <div class="pb-5"></div>
+  <div>
+    <p class="italic text-emerald-900 text-m text-center">What a wonderful ingredient! Below are some recipes that include it. Happy cooking!</p>
+    <br><br>
+  </div>
+  <div class="pb-5"></div>
+   <span class="text-center text-emerald-900 font-semibold text-m">
+    <ul>
+      <% @ingredient.recipes.each do |recipe| %>
+        <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to recipe.title, recipe %></li>
+      <% end %>
+    </ul>
+  </span>
+
+</div>
+

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :contributors, :controllers => { registrations: 'contributors/registrations' }
   resources :contributors, only: [:index, :show]
   resources :recipes
+  resources :ingredients
 end

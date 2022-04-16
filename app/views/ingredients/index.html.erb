@@ -1,0 +1,9 @@
+<div class="flex space-y-4 p-10">
+    <span class="text-right text-emerald-900 font-semibold text-xl"> <h1>Welcome to the Ingredients Index</h1></span>
+</div>
+
+<ul>
+  <% @ingredients.each do |ing| %>
+    <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to ing.name, ing %></li>
+  <% end %>
+</ul>
