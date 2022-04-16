@@ -7,7 +7,17 @@
   <div>
     <p class="text-emerald-900 text-m"><q><%= @recipe.description %></q>
     <br><br>
-    <i class="text-m text-emerald-900 hover:text-green-500 underline">by <%= link_to @recipe.contributor.profile_name, @recipe.contributor %></i>
+    <p class="text-m text-emerald-900 hover:text-green-500 underline">by <%= link_to @recipe.contributor.profile_name, @recipe.contributor %></p>
+    <div class="pb-5"></div>
+  </div>
+  <div>
+    <h4 class="text-emerald-900">This recipe uses the following ingredients:</h4>
+    <div class="pb-5"></div>
+    <ul>
+    <% @recipe.ingredients.each do |ing| %>
+      <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to ing.name, ing %></li>
+    <% end %>
+    </ul>
   </div>
 </div>
 <% if @recipe.contributor == current_contributor %>
