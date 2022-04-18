@@ -10,7 +10,6 @@
     <p class="text-m text-emerald-900 hover:text-green-500 underline">by <%= link_to @recipe.contributor.profile_name, @recipe.contributor %></p>
     <div class="pb-5"></div>
   </div>
-  <div>
     <h4 class="text-emerald-900">This recipe uses the following ingredients:</h4>
     <div class="pb-5"></div>
     <ul>
@@ -19,6 +18,13 @@
     <% end %>
     </ul>
   </div>
+  <div>
+  <h4 class="text-emerald-900">Here's how to make it!</h4>
+  <div class="pb-5">
+  </div>
+    <%= @recipe.instructions %>
+  </div>
+  <div class="pb-5"></div>
 </div>
 <% if @recipe.contributor == current_contributor %>
   <h3 class="text-emerald-900"><i>You contributed this recipe! Thanks for getting involved, </i><i><%= current_contributor.profile_name %>!</i></h3>
