@@ -12,6 +12,13 @@
   <div>
     <%= form.text_field :description, placeholder: "You will love this recipe because ...", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
+  <div class="pb-5"></div>
+  <div>
+    <%= form.label :instructions, class:"text-emerald-900" %>
+  </div>
+  <div>
+    <%= form.rich_text_area :instructions, placeholder: "How do we make it?!", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div>
   <div>
     <% recipe.errors.full_messages_for(:title).each do |message| %>
       <div class="italic font-mono text-yellow-300 font-light text-sm"><%= message %></div>
