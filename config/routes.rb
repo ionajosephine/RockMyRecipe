@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :contributors, only: [:index, :show]
   resources :recipes
   resources :ingredients
+  resources :blogs
 end
