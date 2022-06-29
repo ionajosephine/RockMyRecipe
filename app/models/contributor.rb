@@ -1,9 +1,9 @@
 class Contributor < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :trackable and :omniauthable
+  # :trackable and :omniauthable and :confirmable, :lockable, :timeoutable
+
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, 
-         :confirmable, :lockable, :timeoutable
+         :recoverable, :rememberable, :validatable 
   validates :profile_name, presence: true, uniqueness: true
   has_many :recipes, :dependent => :destroy
 end
