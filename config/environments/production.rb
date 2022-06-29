@@ -74,6 +74,7 @@ Rails.application.configure do
     port: 465,
     authentication: :plain,
     enable_starttls_auto: true
+    tls: true,
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
