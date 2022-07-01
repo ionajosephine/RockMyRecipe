@@ -6,4 +6,5 @@ class Contributor < ApplicationRecord
          :recoverable, :rememberable, :validatable 
   validates :profile_name, presence: true, uniqueness: true
   has_many :recipes, :dependent => :destroy
+  has_many :blogs
 end
