@@ -32,15 +32,6 @@ RSpec.describe Recipe, type: :model do
     end
   end
 
-  context "with no instructions" do
-    it "should have an error on instructions" do
-      recipe = Recipe.new
-      recipe.valid?
-     # puts recipe.errors.inspect
-      expect(recipe.errors.of_kind?(:instructions, :blank)).to eq(true)
-    end
-  end
-
   context "with title that's already taken" do
 
     let(:other_recipe) { FactoryBot.create(:recipe) }

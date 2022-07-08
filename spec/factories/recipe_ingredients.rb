@@ -4,6 +4,5 @@ FactoryBot.define do
    ingredient
    qty { 10 }
    unit { "grams" }
-
  end
 end
