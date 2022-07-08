@@ -14,7 +14,7 @@
     <div class="pb-5"></div>
     <ul>
     <% @recipe.ingredients.each do |ing| %>
-      <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to ing.name, ing %></li>
+      <li> <%= ing.name %></li>
     <% end %>
     </ul>
   </div>
@@ -22,7 +22,7 @@
   <h4 class="text-emerald-900">Here's how to make it!</h4>
   <div class="pb-5">
   </div>
-    <%= @recipe.instructions %>
+    <%#= @recipe.instructions %>
   </div>
   <div class="pb-5"></div>
 </div>
