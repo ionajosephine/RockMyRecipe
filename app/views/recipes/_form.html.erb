@@ -15,21 +15,21 @@
   <div class="pb-5"></div>
 
   <div>
-    <%= fields_for :ingredient, @recipe.ingredients do |ingredient_form| %>
-      <%= ingredient_form.label :name %>
-      <%= ingredient_form.text_field :name %>
-    <% end %>
+    <%#= recipe_form.fields_for :ingredient_attributes, @recipe.ingredients do |ingredient_form| %>
+      <%#= ingredient_form.label :name %>
+      <%#= ingredient_form.text_field :name %>
+    <%# end %>
   </div>
 
   <div>
-    <%#= fields_for :instructions, @recipe.instructions do |instruction_form| %>
-      <%#= instruction_form.label :steps, class:"text-emerald-900" %>
-      <%#= instruction_form.rich_text_area :steps, autofocus: true, placeholder: "How do we make it?!", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
-    <%# end %> 
+    <%= recipe_form.fields_for :instructions do |instruction_form| %>
+      <%= instruction_form.label :directions, class:"text-emerald-900" %>
+      <%= instruction_form.text_field :directions, autofocus: true, placeholder: "How do we make it?!", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+    <% end %> 
   </div>
 
   <div>
-    <% recipe.errors.full_messages_for(:title).each do |message| %>
+    <% @recipe.errors.full_messages_for(:title).each do |message| %>
       <div class="italic font-mono text-yellow-300 font-light text-sm"><%= message %></div>
     <% end %>
   </div>
