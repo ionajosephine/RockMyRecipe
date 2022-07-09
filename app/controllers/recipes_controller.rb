@@ -9,25 +9,17 @@ class RecipesController < ApplicationController
 
   def show
     @recipe
-   # @ingredient = @recipe.ingredients.all
-   # @recipe_ingredient = @recipe.recipe_ingredient.all
-    @instruction = @recipe.instructions.all
   end
 
   def new
     @recipe = Recipe.new
     3.times { @recipe.instructions.build }
-    #@ingredient = Ingredient.new
-    #@recipe_ingredient = RecipeIngredient.new
+    @recipe.ingredients.build
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.contributor = current_contributor
-
-    # @instruction = Instruction.new(recipe: @recipe, directions: recipe_params([:instructions_attributes]))
-    # @ingredient = Ingredient.new(recipe_params[:ingredient_attributes])
-    # @recipe_ingredient = RecipeIngredient.new(recipe: @recipe, ingredient: @ingredient)
 
     if @recipe.save 
       redirect_to @recipe
@@ -60,9 +52,8 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(
         :title, :contributor_id, :description, 
-        ingredient_attributes: [ :name ],
-        recipe_ingredient_attributes: [ :recipe_id, :ingredient_id, :unit, :qty ],
-        instructions_attributes: [ :directions ]
+        ingredients_attributes: [ :name, :id ],
+        instructions_attributes: [ :directions, :id ]
         )
     end
 

@@ -13,9 +13,9 @@
     <h4 class="text-emerald-900">This recipe uses the following ingredients:</h4>
     <div class="pb-5"></div>
     <ul>
-    <%# @recipe.ingredients.each do |ing| %>
-      <li> <%#= ing.name %></li>
-    <%# end %>
+      <% @recipe.ingredients.each do |ing| %>
+        <li> <%= ing.name %></li>
+      <% end %>
     </ul>
   </div>
   <div>

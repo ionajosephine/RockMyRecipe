@@ -15,10 +15,10 @@
   <div class="pb-5"></div>
 
   <div>
-    <%#= recipe_form.fields_for :ingredient_attributes, @recipe.ingredients do |ingredient_form| %>
-      <%#= ingredient_form.label :name %>
-      <%#= ingredient_form.text_field :name %>
-    <%# end %>
+    <%= recipe_form.fields_for :ingredients do |ingredient_form| %>
+      <%= ingredient_form.label :ingredient, class:"text-emerald-900" %>
+      <%= ingredient_form.text_field :name, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+    <% end %>
   </div>
 
   <div>
