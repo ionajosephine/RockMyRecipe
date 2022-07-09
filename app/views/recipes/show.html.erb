@@ -4,25 +4,28 @@
     <h1><%= @recipe.title %></h1>
   </span>
   <div class="pb-5"></div>
-  <div>
-    <p class="text-emerald-900 text-m"><q><%= @recipe.description %></q>
-    <br><br>
-    <p class="text-m text-emerald-900 hover:text-green-500 underline">by <%= link_to @recipe.contributor.profile_name, @recipe.contributor %></p>
+  <q class="text-emerald-900 text-m"><%= @recipe.description %></q>
+    <br>
+  <p class="text-m text-emerald-900 hover:text-green-500 underline">by <%= link_to @recipe.contributor.profile_name, @recipe.contributor %></p>
     <div class="pb-5"></div>
-  </div>
-    <h4 class="text-emerald-900">This recipe uses the following ingredients:</h4>
+  <div>
+    <h4 class="text-emerald-900 font-semibold text-m">This recipe uses the following ingredients:</h4>
     <div class="pb-5"></div>
     <ul>
-    <% @recipe.ingredients.each do |ing| %>
-      <li class="text-lg text-emerald-900 hover:text-green-500"> <%= link_to ing.name, ing %></li>
-    <% end %>
+      <% @recipe.ingredients.each do |ing| %>
+        <li> <%= ing.name %></li>
+      <% end %>
     </ul>
+    <div class="pb-5"></div>
   </div>
   <div>
-  <h4 class="text-emerald-900">Here's how to make it!</h4>
-  <div class="pb-5">
-  </div>
-    <%= @recipe.instructions %>
+    <h4 class="text-emerald-900 font-semibold text-m">Here's how to make it!</h4>
+    <div class="pb-5"></div>
+    <ul>
+      <% @recipe.instructions.each do |instruction| %>
+      <li><%= instruction.directions %>
+      <% end %>
+    </ul>
   </div>
   <div class="pb-5"></div>
 </div>

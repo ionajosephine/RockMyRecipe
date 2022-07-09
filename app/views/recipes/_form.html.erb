@@ -1,33 +1,41 @@
-<%= form_with model: @recipe do |form| %>
+<%= form_with model: @recipe do |recipe_form| %>
   <div>
-    <%= form.label :title, class:"text-emerald-900" %>
+    <%= recipe_form.label :title, class:"text-emerald-900" %>
   </div>
   <div>
-    <%= form.text_field :title, autofocus: true, placeholder: :title, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
-  </div>
-  <div class="pb-5"></div>
-  <div>
-    <%= form.label :description, class:"text-emerald-900" %><i>(Why will we love this recipe?)</i>
-  </div>
-  <div>
-    <%= form.text_field :description, placeholder: "You will love this recipe because ...", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+    <%= recipe_form.text_field :title, autofocus: true, placeholder: :title, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
   <div class="pb-5"></div>
   <div>
-    <%= form.label :instructions, class:"text-emerald-900" %>
+    <%= recipe_form.label :description, class:"text-emerald-900" %><i>(Why will we love this recipe?)</i>
   </div>
   <div>
-    <%= form.rich_text_area :instructions, placeholder: "How do we make it?!", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+    <%= recipe_form.text_field :description, placeholder: "You will love this recipe because ...", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
+  <div class="pb-5"></div>
+
   <div>
-    <% recipe.errors.full_messages_for(:title).each do |message| %>
+    <%= recipe_form.fields_for :ingredients do |ingredient_form| %>
+      <%= ingredient_form.label :ingredient, class:"text-emerald-900" %>
+      <%= ingredient_form.text_field :name, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= recipe_form.fields_for :instructions do |instruction_form| %>
+      <%= instruction_form.label :directions, class:"text-emerald-900" %>
+      <%= instruction_form.text_field :directions, autofocus: true, placeholder: "How do we make it?!", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+    <% end %> 
+  </div>
+
+  <div>
+    <% @recipe.errors.full_messages_for(:title).each do |message| %>
       <div class="italic font-mono text-yellow-300 font-light text-sm"><%= message %></div>
     <% end %>
   </div>
   <div class="pb-5"></div>
   <div>
-    <%= form.submit class:"btn-primary" %>
+    <%= recipe_form.submit class:"btn-primary" %>
   </div>
 <% end %>
-
 

@@ -13,13 +13,15 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    3.times { @recipe.instructions.build }
+    @recipe.ingredients.build
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.contributor = current_contributor
 
-    if @recipe.save
+    if @recipe.save 
       redirect_to @recipe
       flash[:notice] = "Recipe created successfully"
     else
@@ -48,7 +50,11 @@ class RecipesController < ApplicationController
   private
 
     def recipe_params
-      params.require(:recipe).permit(:title, :contributor_id, :description, :instructions)
+      params.require(:recipe).permit(
+        :title, :contributor_id, :description, 
+        ingredients_attributes: [ :name, :id ],
+        instructions_attributes: [ :directions, :id ]
+        )
     end
 
     def find_recipe
