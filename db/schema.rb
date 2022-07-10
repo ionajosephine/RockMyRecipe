@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_09_145714) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_10_175930) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_09_145714) do
     t.text "tiktok"
     t.text "bio"
     t.integer "blogs_count", default: 0, null: false
+    t.integer "likes_count", default: 0, null: false
     t.index ["email"], name: "index_contributors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_contributors_on_reset_password_token", unique: true
   end
@@ -99,12 +100,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_09_145714) do
     t.index ["recipe_id"], name: "index_instructions_on_recipe_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "contributor_id", null: false
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contributor_id"], name: "index_likes_on_contributor_id"
+    t.index ["recipe_id"], name: "index_likes_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "contributor_id", null: false
     t.text "description", null: false
+    t.integer "likes_count", default: 0, null: false
     t.index ["contributor_id"], name: "index_recipes_on_contributor_id"
   end
 
@@ -113,5 +124,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_09_145714) do
   add_foreign_key "blogs", "contributors"
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "instructions", "recipes"
+  add_foreign_key "likes", "contributors"
+  add_foreign_key "likes", "recipes"
   add_foreign_key "recipes", "contributors"
 end

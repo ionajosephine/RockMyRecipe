@@ -26,6 +26,17 @@
       <li><%= instruction.directions %>
       <% end %>
     </ul>
+    <% if @like.new_record? %>
+    <br>
+      <p>Like this idea?</p>
+      <%= render 'likes/form' %>
+    <% else %>
+          <%#= render 'likes/form', @like, data: { "turbo-method": :delete } %>
+
+      <%= button_to 'Unlike', @like,
+              method: :delete,
+              data: { confirm: "Are you sure?" }, class:"btn-primary" %>  
+    <% end %>
   </div>
   <div class="pb-5"></div>
 </div>
