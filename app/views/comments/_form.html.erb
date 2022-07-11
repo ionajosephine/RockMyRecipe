@@ -1,0 +1,12 @@
+<%= form_with model: [ @recipe, @comment ] do |form| %>
+  <% @comment.errors.full_messages.each do |error| %>
+      <div><%= error %></div>
+    <% end %>
+  <p>
+    <%= form.label :message, class:"text-emerald-900" %>
+    <%= form.text_area :message, autofocus: true, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </p>
+  <p>
+    <%= form.submit class:"btn-primary" %>
+  </p>
+<% end %>

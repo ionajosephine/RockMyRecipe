@@ -11,6 +11,8 @@ class RecipesController < ApplicationController
     @recipe
     @likes = @recipe.likes_count
     @like = Like.find_or_initialize_by(recipe: @recipe, contributor: current_contributor)
+    @comments = @recipe.comments.all
+    @comment = @recipe.comments.new
   end
 
   def new

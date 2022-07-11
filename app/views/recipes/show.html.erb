@@ -39,6 +39,11 @@
     <% end %>
   </div>
   <div class="pb-5"></div>
+  <h6 class="text-emerald-900 font-semibold text-m"> <%= @comments.size %> comments: </h6>
+  <br>
+  <%= render @comments %>
+  <br>
+  <%= render 'comments/form' %>
 </div>
 <% if @recipe.contributor == current_contributor %>
   <h3 class="text-emerald-900"><i>You contributed this recipe! Thanks for getting involved, </i><i><%= current_contributor.profile_name %>!</i></h3>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :likes, shallow: true, only: [:create, :destroy]
+    resources :comments, shallow: true 
   end
   
 end
