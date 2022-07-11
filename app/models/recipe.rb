@@ -6,4 +6,5 @@ class Recipe < ApplicationRecord
   has_many :instructions
   accepts_nested_attributes_for :ingredients
   accepts_nested_attributes_for :instructions
+  has_many :comments, :dependent => :destroy
 end

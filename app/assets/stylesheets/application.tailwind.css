@@ -6,6 +6,9 @@
   .btn-primary {
     @apply text-white px-3.5 py-2.5 rounded-full bg-emerald-700 hover:bg-emerald-600;
   }
+  .btn-secondary {
+    @apply text-white text-sm px-2.5 py-1.5 rounded-full bg-emerald-700 hover:bg-emerald-600;
+  }
 }
 
 
