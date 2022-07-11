@@ -15,7 +15,7 @@ I have many ideas for how the final product *could* be. Although I'm following m
 
 When Rock My Recipe reaches Minimum Viable Product (MVP) stage I'll update this file with more info including instructions for how to use it, ruby version, system dependencies, configuration, etc. For now the database schema is changing every week and it has plenty of bugs!
 
-If you have a strong and immediate desire to use my code for your own projects before the MVP is ready 🤨 you are within your rights to do so **BUT PLEASE don't do so anonymously: FORK it** and send me a personal **message** about how you'll **use it in line with it's #TechForGood aims.** 😇 🤝 👍
+If you have a strong and immediate desire to use my code for your own projects before the MVP is ready 🤨 you are within your rights to do so **BUT PLEASE don't do so anonymously: FORK it** and send me a personal **message** about how you'll **use it in line with it's *#TechForGood* aims.** 😇 🤝 👍
 
 
 
