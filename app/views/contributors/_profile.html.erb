@@ -1,17 +1,20 @@
 <div class="pb-5"></div>
+<h2 class="text-centre text-emerald-900 font-semibold text-lg">About:</h2>
 <ul>
 <% if contributor.bio? %>
-  <li class="text-centre text-emerald-900 text-m">Bio: <%= contributor.bio %></li>
+  <li class="italic text-centre text-emerald-900"><%= contributor.bio %></li>
 <% elsif contributor == current_contributor %>
   <li><%= link_to "Add bio", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
 <% end %>
+<br>
 <% if contributor.website? %>
-  <li class="text-centre text-emerald-900 text-m">Website: <%= contributor.bio %></li>
+  <li class="text-emerald-900 hover:text-green-500"><a href="<%= contributor.website %>">Website</a></li>
+</li>
 <% elsif contributor == current_contributor %>
   <li><%= link_to "Add website", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
 <% end %>
 <% if contributor.twitter? %>
-  <li class="text-centre text-emerald-900 text-m">Twitter: <%= contributor.twitter %></li>
+  <li class="text-emerald-900 hover:text-green-500"><a href="<%= contributor.twitter %>">Twitter</a></li>
 <% elsif contributor == current_contributor %>
   <li><%= link_to "Add twitter", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
 <% end %>
