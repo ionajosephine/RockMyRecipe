@@ -122,7 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_115715) do
   create_table "recipes", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+≠    t.datetime "updated_at", null: false
     t.bigint "contributor_id", null: false
     t.text "description", null: false
     t.integer "likes_count", default: 0, null: false

@@ -27,7 +27,7 @@
     <% end %>
   </div>
 
-<div class="pb-5"></div>
+  <div class="pb-5"></div>
 
   <div class="field">
     <%= f.label :password_confirmation, class:"text-emerald-900" %><br />
@@ -44,6 +44,60 @@
   <div class="pb-5"></div>
 
   <div class="field">
+    <%= f.label :bio, class:"text-emerald-900"%><i>(Here is your opportunity to promote yourself, your work or your charity!)</i><br />
+    <%= f.text_field :bio, class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div>
+
+  <div class="pb-5"></div>
+
+  <div class="field">
+    <%= f.label :website, class:"text-emerald-900" %><br />
+    <%= f.text_field :website, class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div> 
+
+  <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg" open>
+    <summary class="text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none">
+      More social media ...
+    </summary>
+
+  <div class="field">
+    <%= f.label :instagram, class:"text-emerald-900"%><br />
+    <%= f.text_field :instagram, class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div>
+
+  <div class="pb-5"></div>
+
+  <div class="field">
+    <%= f.label :facebook, class:"text-emerald-900"%><br />
+    <%= f.text_field :facebook, class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div>
+
+  <div class="pb-5"></div>
+
+  <div class="field">
+    <%= f.label :pinterest, class:"text-emerald-900"%><br />
+    <%= f.text_field :pinterest, class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div> 
+
+  <div class="pb-5"></div>
+
+  <div class="field">
+    <%= f.label :tiktok, class:"text-emerald-900"%><br />
+    <%= f.text_field :tiktok, class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div> 
+
+  <div class="pb-5"></div>
+
+  <div class="field">
+    <%= f.label :twitter, class:"text-emerald-900"%><br />
+    <%= f.text_field :twitter, class: "w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
+  </div> 
+
+  </details>
+  
+  <div class="pb-5"></div>
+
+  <div class="field">
     <%= f.label :current_password, class:"text-emerald-900" %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password", class:"w-full rounded-lg border-emerald-800 focus:border-emerald-600 caret-emerald-600 ring-0 focus:ring-emerald-500 text-m font-semibold" %>
   </div>
@@ -54,7 +108,8 @@
     <%= f.submit "Update", class:"btn-primary" %>
   </div>
 <% end %>
-
+  
+<div class="pb-5"></div>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 

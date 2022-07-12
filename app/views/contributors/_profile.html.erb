@@ -1,14 +1,30 @@
 <div class="pb-5"></div>
-
-<h2 class="text-centre text-emerald-900 font-semibold text-lg"> Contributions: <%= contributor.recipes_count %><h3>
-
-<div class="pb-5"></div>
-
 <ul>
-  <% contributor.recipes.each do |recipe| %>
-    <li class="text-lg text-emerald-900 hover:text-green-500"><%= link_to recipe.title, recipe %></li>
-    <br>
-  <% end %>
+<li class="text-centre text-emerald-900 text-m">Bio: <%= contributor.bio %></li>
+<li class="text-centre text-emerald-900 text-m">Twitter: <%= contributor.twitter %></li>
+<li class="text-centre text-emerald-900 text-m"> Website <%= contributor.website %></li>
 </ul>
+<h2 class="text-centre text-emerald-900 font-semibold text-lg"> Recipe Contributions: <%= contributor.recipes_count %><h3>
+<div class="pb-5"></div>
+<div>
+  <ul>
+    <% contributor.recipes.each do |recipe| %>
+      <li class="text-lg text-emerald-900 hover:text-green-500"><%= link_to recipe.title, recipe %></li>
+      <br>
+    <% end %>
+  </ul>
+</div>
+<div class="pb-5"></div>
+<div>
+  <h2 class="text-centre text-emerald-900 font-semibold text-lg"><%= @contributor.profile_name %>'s Ingredients</h2>
+  <br>
+  <ul><% contributor.recipes.each do |recipe| %>
+      <% recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
 
 

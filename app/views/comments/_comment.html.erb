@@ -1,9 +1,13 @@
-<p>
- <%= comment.contributor.profile_name %> says: 
- <i> <%= comment.message %> </i>
-<% if comment.contributor == current_contributor %>
- <%= button_to 'Uncomment', comment,
-              method: :delete,
-              data: { confirm: "Are you sure?" }, class:"btn-secondary" %>
-<% end %>
- </p>
+<%#= turbo_frame_tag dom_id(comment) do %>
+  <div>
+    <p>
+      <%= comment.contributor.profile_name %> says: 
+      <i> <%= comment.message %> </i>
+      <% if comment.contributor == current_contributor %>
+        <%= button_to 'Uncomment', comment,
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class:"btn-secondary" %>
+      <% end %>
+    </p>
+  </div>
+<%# end %>
