@@ -1,14 +1,47 @@
 <div class="pb-5"></div>
-
-<h2 class="text-centre text-emerald-900 font-semibold text-lg"> Contributions: <%= contributor.recipes_count %><h3>
-
+<h2 class="text-centre text-emerald-900 font-semibold text-lg">About:</h2>
+<ul>
+<% if contributor.bio? %>
+  <li class="italic text-centre text-emerald-900"><%= contributor.bio %></li>
+<% elsif contributor == current_contributor %>
+  <li><%= link_to "Add bio", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
+<% end %>
+<br>
+<% if contributor.website? %>
+  <li class="text-emerald-900 hover:text-green-500"><a href="<%= contributor.website %>">Website</a></li>
+</li>
+<% elsif contributor == current_contributor %>
+  <li><%= link_to "Add website", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
+<% end %>
+<% if contributor.twitter? %>
+  <li class="text-emerald-900 hover:text-green-500"><a href="<%= contributor.twitter %>">Twitter</a></li>
+<% elsif contributor == current_contributor %>
+  <li><%= link_to "Add twitter", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
+<% end %>
+</ul>
 <div class="pb-5"></div>
 
-<ul>
-  <% contributor.recipes.each do |recipe| %>
-    <li class="text-lg text-emerald-900 hover:text-green-500"><%= link_to recipe.title, recipe %></li>
-    <br>
-  <% end %>
-</ul>
+<h2 class="text-centre text-emerald-900 font-semibold text-lg"> Recipe Contributions: <%= contributor.recipes_count %><h3>
+<div class="pb-5"></div>
+<div>
+  <ul>
+    <% contributor.recipes.each do |recipe| %>
+      <li class="text-lg text-emerald-900 hover:text-green-500"><%= link_to recipe.title, recipe %></li>
+      <br>
+    <% end %>
+  </ul>
+</div>
+<div class="pb-5"></div>
+<div>
+  <h2 class="text-centre text-emerald-900 font-semibold text-lg"><%= @contributor.profile_name %>'s Ingredients</h2>
+  <br>
+  <ul><% contributor.recipes.each do |recipe| %>
+      <% recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
 
 

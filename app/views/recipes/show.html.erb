@@ -26,6 +26,8 @@
       <li><%= instruction.directions %>
       <% end %>
     </ul>
+    <br>
+    <p>Like count: <%= @recipe.likes_count %> </p>
     <% if @like.new_record? %>
     <br>
       <p>Like this idea?</p>
