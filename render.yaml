@@ -6,6 +6,7 @@ databases:
 services:
   - type: web
     name: rockmyrecipe
+    plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
