@@ -84,3 +84,4 @@ production:
   database: recipeshare_production
   username: recipeshare
   password: <%= ENV["RECIPESHARE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

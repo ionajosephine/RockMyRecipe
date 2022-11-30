@@ -11,7 +11,7 @@
           <li class="text-right text-white hover:text-emerald-600"><%= link_to 'Settings', edit_contributor_registration_path %></li>
           <li class="text-right text-white hover:text-emerald-600"><%= link_to 'Profile', contributor_path(current_contributor) %></li>
 
-          <li class="text-right text-white hover:text-emerald-600"><%= button_to "Sign Out", destroy_contributor_session_path, method: :delete %></li>
+          <li class="text-right text-white hover:text-emerald-600 !ml-auto"><%= button_to "Sign Out", destroy_contributor_session_path, method: :delete %></li>
           <li class="text-right text-white hover:text-emerald-600"><%= link_to "Contributors", contributors_path %></li>
 
       <% else %>
