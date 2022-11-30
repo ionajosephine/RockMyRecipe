@@ -3,7 +3,7 @@
 # Rock My Recipe!
 🥦🧅🥒🌶️🥗🫐🍇🥬🧄🥙🥝🧆🍉🥑🌽
 
-This is a *#TechForGood* recipe sharing web app being built using Ruby on Rails. You can view its current state live: [Rock My Recipe](https://www.rockmyrecipe.com) and if you do so you will see it is still in the early stages of development! You can follow the build progress on [twitter](https://twitter.com/rockmyrecipe).
+This is a *#TechForGood* recipe sharing web app being built using Ruby on Rails. You can follow the build progress on [twitter](https://twitter.com/rockmyrecipe).
 
 ## Aims of the project
 
