@@ -11,7 +11,7 @@
   <li class="text-emerald-900 hover:text-green-500"><a href="<%= contributor.website %>">Website</a></li>
 </li>
 <% elsif contributor == current_contributor %>
-  <li><%= link_to "Add website", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
+  <li class="my-2"><%= link_to "Add website", edit_contributor_registration_path(contributor), class:"btn-secondary"%></li>
 <% end %>
 <% if contributor.twitter? %>
   <li class="text-emerald-900 hover:text-green-500"><a href="<%= contributor.twitter %>">Twitter</a></li>
