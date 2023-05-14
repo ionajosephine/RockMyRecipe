@@ -4,14 +4,13 @@
       <li class="text-right space-y-6 underline decoration-1 decoration-indigo-500 font-bold text-white hover:text-green-500"><%= link_to 'Recipes', recipes_path %></li>
       <li class="text-right space-y-6 underline decoration-1 decoration-indigo-500 font-bold text-white hover:text-green-500"><%= link_to 'Ingredients', ingredients_path %></li>
       <li class="text-right space-y-6 underline decoration-1 decoration-indigo-500 font-bold text-white hover:text-green-500"><%= link_to 'Blog', blogs_path %></li>
+      <li class="text-right text-white hover:text-emerald-600"><%= link_to "Contributors", contributors_path %></li>
+
 
 
       <% if contributor_signed_in? %>
           <li class="text-right text-white hover:text-emerald-600"><%= link_to 'New Recipe', new_recipe_path %></li>
-          <li class="text-right text-white hover:text-emerald-600"><%= link_to 'Settings', edit_contributor_registration_path %></li>
           <li class="text-right text-white hover:text-emerald-600"><%= link_to 'Profile', contributor_path(current_contributor) %></li>
-
-          <li class="text-right text-white hover:text-emerald-600"><%= link_to "Contributors", contributors_path %></li>
           <li class="text-right text-white hover:text-emerald-600 !ml-auto"><%= button_to "Sign Out", destroy_contributor_session_path, method: :delete %></li>
 
       <% else %>
