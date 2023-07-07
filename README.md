@@ -7,7 +7,7 @@ This is a *#TechForGood* recipe sharing web app being built using Ruby on Rails.
 
 ## Aims of the project
 
-The ultimate aim of the project is to be a fundraising and promotional tool for charities/non-profit organisations. At present you can share your recipes, like and comment on other's recipes and use your profile to promote your cause.
+The ultimate aim of the project is to be a fundraising and promotional tool for charities/non-profit organisations and to be a fun project for junior developers to practice their skills. At present you can share your recipes, like and comment on other's recipes and use your profile to promote your cause.
 
 ### For Developers
 
