@@ -3,7 +3,7 @@
 # Rock My Recipe! (No longer maintained)
 🥦🧅🥒🌶️🥗🫐🍇🥬🧄🥙🥝🧆🍉🥑🌽
 
-This is a *#TechForGood* recipe sharing web app built using Ruby on Rails. You can see historic build progress on [twitter](https://twitter.com/rockmyrecipe) however it is no longer maintained.
+This is a *#TechForGood* recipe sharing web app built using Ruby on Rails. 
 
 ## Aims of the project
 
